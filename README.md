@@ -26,13 +26,19 @@ This repository contains my personal configuration for [Nix Darwin](https://daid
 
    Follow the instructions from the [official Nix installation guide](https://nixos.org/download.html).
 
-3. **Set up Nix Darwin:**
+3. **Install Rosetta**
 
    ```bash
-   nix run github:LnL7/nix-darwin
+   softwareupdate --install-rosetta --agree-to-license
    ```
 
-4. **Apply the configuration:**
+4. **Set up Nix Darwin:**
+
+   ```bash
+   nix --extra-experimental-features 'nix-command flakes' run nix-darwin -- switch --flake ~/.config/nix-darwin
+   ```
+
+5. **Apply the configuration:**
 
    ```bash
    darwin-rebuild switch --flake .

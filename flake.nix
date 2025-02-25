@@ -30,14 +30,13 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [
         # CLI tools
+        just
         vim
         tree
         mkalias
         git
         yarn
         ddev
-        fontconfig
-        freetype
         gettext
         gh
         maven
@@ -54,20 +53,16 @@
         # Browsers
         arc-browser
         google-chrome
-        firefox
-        firefox-devedition
         brave
 
         # Development tools
         code-cursor
         vscode
-        filezilla
         warp-terminal
         jetbrains.idea-community
         jetbrains.pycharm-community
 
         # Databases
-        mongodb-compass
         sequelpro
         tableplus
 
@@ -80,7 +75,6 @@
         slack
 
         # Utilities
-        github-desktop
         gitkraken
         keka
 
@@ -113,13 +107,12 @@
           "imageoptim"
           "1password"
           "utm"
-          # "docker" Docker Desktop if pkg don't work
+          "firefox"
+          "mongodb-compass"
+          "docker"
+          "github"
         ];
-        taps = {
-          "homebrew/homebrew-core" = homebrew-core;
-          "homebrew/homebrew-cask" = homebrew-cask;
-          "homebrew/homebrew-bundle" = homebrew-bundle;
-        };
+        
         # Mac App Store apps
         masApps = {
           "Messanger" = 1480068668;
@@ -142,15 +135,12 @@
       };
 
       fonts.packages = with pkgs; [
-        nerdfonts
+        nerd-fonts.fira-code
         nerd-fonts.jetbrains-mono
         fira-code
         fira-code-symbols
         jetbrains-mono
         mononoki
-        roboto
-        roboto-mono
-        roboto-mono-nerd
       ];
 
       security = {
@@ -170,6 +160,12 @@
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
+
+      nix.gc = {
+        # Do garbage collection weekly to keep disk usage low
+        automatic = true;
+        options = "--delete-older-than 7d";
+      };
 
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
@@ -198,11 +194,23 @@
             enable = true;
             # Enable Rosetta 2 for Apple Silicon Macs
             enableRosetta = true;
+            
+            # User owning the Homebrew prefix
+            user = "jpena";
+
+            taps = {
+              "homebrew/homebrew-core" = homebrew-core;
+              "homebrew/homebrew-cask" = homebrew-cask;
+              "homebrew/homebrew-bundle" = homebrew-bundle;
+            };
+
             # Automatically migrate existing formulae and casks to the new package manager
             autoMigrate = true;
           };
         }
       ];
     };
+
+    darwinPackages = self.darwinConfigurations."fullstack".pkgs;
   };
 }
