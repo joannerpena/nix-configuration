@@ -87,7 +87,6 @@
         utm
 
         # Productivity
-        _1password-gui
         obsidian
 
         # Misc
@@ -114,6 +113,7 @@
           "sourcetree"
           "masscode"
           "imageoptim"
+          "1password"
           # "docker" Docker Desktop if pkg don't work
         ];
         taps = {
