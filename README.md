@@ -18,8 +18,8 @@ This repository contains my personal configuration for [Nix Darwin](https://daid
 1. **Clone this repository:**
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/joannerpena/nix-configuration nix-darwin
+   cd nix-darwin
    ```
 
 2. **Install Nix (if not already installed):**

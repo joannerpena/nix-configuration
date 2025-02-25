@@ -156,7 +156,7 @@
 
       security = {
         pam.enableSudoTouchIdAuth = true;
-      }
+      };
 
       system.defaults = {
         dock.autohide = true; # Hide dock
@@ -189,7 +189,7 @@
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#simple
+    # $ darwin-rebuild build --flake
     darwinConfigurations = nix-darwin.lib.darwinSystem {
       modules = [ 
         configuration
@@ -201,8 +201,8 @@
             enableRosetta = true;
             # Automatically migrate existing formulae and casks to the new package manager
             autoMigrate = true;
-          }
-        }
+          };
+        };
       ];
     };
   };
