@@ -50,7 +50,6 @@
         starship
         subversion
         wp-cli
-        yarn
 
         # Browsers
         arc-browser
