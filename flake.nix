@@ -194,15 +194,15 @@
       modules = [ 
         configuration
         mac-app-util.darwinModules.default
-        nix-homebrew.darwinModules.homebrew{
+        nix-homebrew.darwinModules.homebrew {
           nix-homebrew = {
             enable = true;
             # Enable Rosetta 2 for Apple Silicon Macs
             enableRosetta = true;
             # Automatically migrate existing formulae and casks to the new package manager
             autoMigrate = true;
-          }
-        };
+          };
+        }
       ];
     };
   };
