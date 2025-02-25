@@ -201,7 +201,7 @@
             enableRosetta = true;
             # Automatically migrate existing formulae and casks to the new package manager
             autoMigrate = true;
-          };
+          }
         };
       ];
     };
