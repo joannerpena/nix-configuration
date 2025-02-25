@@ -84,7 +84,6 @@
         github-desktop
         gitkraken
         keka
-        utm
 
         # Productivity
         obsidian
@@ -114,6 +113,7 @@
           "masscode"
           "imageoptim"
           "1password"
+          "utm"
           # "docker" Docker Desktop if pkg don't work
         ];
         taps = {
