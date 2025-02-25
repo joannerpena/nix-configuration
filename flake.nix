@@ -83,7 +83,6 @@
         # Utilities
         github-desktop
         gitkraken
-        imageoptim
         keka
         utm
 
@@ -114,6 +113,7 @@
           "onyx"
           "sourcetree"
           "masscode"
+          "imageoptim"
           # "docker" Docker Desktop if pkg don't work
         ];
         taps = {
