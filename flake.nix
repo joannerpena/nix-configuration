@@ -155,7 +155,7 @@
       ];
 
       security = {
-        pam.services.sudo.enableSudoTouchIdAuth = true;
+        pam.services.sudo_local.touchIdAuth = true;
       };
 
       system.defaults = {
