@@ -35,7 +35,7 @@ This repository contains my personal configuration for [Nix Darwin](https://daid
 4. **Set up Nix Darwin:**
 
    ```bash
-   nix --extra-experimental-features 'nix-command flakes' run nix-darwin -- switch --flake ~/.config/nix-darwin
+   nix --extra-experimental-features 'nix-command flakes' run nix-darwin -- switch --flake ~/.config/nix-darwin#fullstack
    ```
 
 5. **Apply the configuration:**
