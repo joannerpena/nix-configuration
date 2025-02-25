@@ -189,8 +189,8 @@
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake
-    darwinConfigurations = nix-darwin.lib.darwinSystem {
+    # $ darwin-rebuild build --flake .#fullstack
+    darwinConfigurations."fullstack" = nix-darwin.lib.darwinSystem {
       modules = [ 
         configuration
         mac-app-util.darwinModules.default
