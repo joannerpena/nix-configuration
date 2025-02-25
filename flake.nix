@@ -194,7 +194,7 @@
       modules = [ 
         configuration
         mac-app-util.darwinModules.default
-        nix-homebrew.darwinModules.homebrew {
+        nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {
             enable = true;
             # Enable Rosetta 2 for Apple Silicon Macs
