@@ -155,7 +155,7 @@
       ];
 
       security = {
-        pam.enableSudoTouchIdAuth = true;
+        pam.services.sudo.enableSudoTouchIdAuth = true;
       };
 
       system.defaults = {
@@ -166,8 +166,8 @@
       };
 
       # Auto upgrade nix package and the daemon service
-      services.nix-daemon.enable = true;
-      nix.settings.auto-optimise-store = true;
+      nix.enable = true;
+      nix.optimise.automatic = true;
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
